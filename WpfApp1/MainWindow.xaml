@@ -24,8 +24,21 @@
                 <ColumnDefinition Width="60*"/>
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-            
-            <Rectangle Grid.Column="0" Fill="LightGray" />
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
+                <userControls:ClearableTextBox Grid.Row="1" Placeholder="First name" Margin="0,6,0,6"/>
+                <userControls:ClearableTextBox Grid.Row="2" Placeholder="Last name" Margin="0,6,0,6"/>
+                <userControls:ClearableTextBox Grid.Row="3" Placeholder="Age" Margin="0,6,0,6"/>
+                <userControls:ClearableTextBox Grid.Row="4" Placeholder="City" Margin="0,6,0,6"/>
+            </Grid>
             <Rectangle Grid.Column="1" Fill="Gray" />
             <Rectangle Grid.Column="2" Fill="DarkGray" />
         </Grid>
