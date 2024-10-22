@@ -19,13 +19,18 @@
             <MenuItem Header="Edit" FontSize="16"/>
         </Menu>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="White">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
+
             <Button x:Name="btn" Grid.Column="0" Width="50" Margin="5" Click="btn_Click" />
             <TextBox Grid.Column="1" Width="150" Margin="5" />
+            <Button Name="btn2" Grid.Column="2" Width="100" Margin="5" Content="File" Click="btn2_Click"/>
+            <TextBlock Name="tbInfo" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" FontSize="20"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1.View.UserControls
@@ -20,6 +22,28 @@ namespace WpfApp1.View.UserControls
             if (messageBoxResult == MessageBoxResult.Yes)
             {
                 MessageBox.Show("Success!");
+            }
+        }
+
+        private void btn2_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "png files (*.png)|*.png|All files (*.*)|*.*";
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            fileDialog.InitialDirectory = Path.Combine(desktopPath, "public");
+            fileDialog.Title = "Select a file";
+
+            bool? success = fileDialog.ShowDialog();
+
+            if (success == true)
+            {
+                string path = fileDialog.FileName;
+                string fileName = fileDialog.SafeFileName;
+                tbInfo.Text = fileName;
+            }
+            else
+            {
+
             }
         }
     }
