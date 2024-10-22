@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1.View.UserControls
@@ -22,14 +24,19 @@ namespace WpfApp1.View.UserControls
         {
             get { return boundText; }
             set { 
-                boundText = value; 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
+                boundText = value;
+                OnPropertyChanged();
             }
         }
 
         private void btnSet_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             BoundText = "Set by button";
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
