@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using WinForms = System.Windows.Forms;
 
 namespace WpfApp1.View.UserControls
 {
@@ -25,7 +27,7 @@ namespace WpfApp1.View.UserControls
             }
         }
 
-        private void btn2_Click(object sender, RoutedEventArgs e)
+        private void fileBtn_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "png files (*.png)|*.png|All files (*.*)|*.*";
@@ -41,9 +43,18 @@ namespace WpfApp1.View.UserControls
                 string fileName = fileDialog.SafeFileName;
                 tbInfo.Text = fileName;
             }
-            else
-            {
+        }
 
+        private void folderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+            dialog.InitialDirectory = @"D:\test\WpfApp1\WpfApp1";
+            WinForms.DialogResult result = dialog.ShowDialog();
+
+            if (result == WinForms.DialogResult.OK)
+            {
+                string path = dialog.SelectedPath;
+                tbInfo.Text = path;
             }
         }
     }
