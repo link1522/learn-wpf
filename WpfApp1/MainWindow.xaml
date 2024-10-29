@@ -39,7 +39,7 @@
                 <userControls:ClearableTextBox Grid.Row="3" Placeholder="Age" Margin="0,6,0,6"/>
                 <userControls:ClearableTextBox Grid.Row="4" Placeholder="City" Margin="0,6,0,6"/>
             </Grid>
-            <userControls:MyListView Grid.Column="1" />
+            <userControls:ObservableCollectionListView Grid.Column="1" />
             <Rectangle Grid.Column="2" Fill="DarkGray" />
         </Grid>
 
