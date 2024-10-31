@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp1.CustomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="CustomWindow" Height="300" Width="300" Background="#333333" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Name="btnMinimize" Content="-" Width="40" Height="40" BorderBrush="Transparent" Background="Transparent" Foreground="White" Click="btnMinimize_Click"/>
+            <Button Name="btnMaxmize" Content="□" Width="40" Height="40" BorderBrush="Transparent" Background="Transparent" Foreground="White" Click="btnMaxmize_Click"/>
+            <Button Name="btnClose" Content="X" Width="40" Height="40" BorderBrush="Transparent" Background="Transparent" Foreground="White" Click="btnClose_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
