@@ -1,15 +1,19 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void appendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            myProps.Title = "7777";
+            myProps.Items.Add("III");
         }
     }
 }

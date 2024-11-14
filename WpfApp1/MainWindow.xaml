@@ -39,8 +39,10 @@
                 <userControls:ClearableTextBox Grid.Row="3" Placeholder="Age" Margin="0,6,0,6"/>
                 <userControls:ClearableTextBox Grid.Row="4" Placeholder="City" Margin="0,6,0,6"/>
             </Grid>
-            <userControls:MyScrollViewer Grid.Column="1" />
-            <Rectangle Grid.Column="2" Fill="DarkGray" />
+            <userControls:MyProps x:Name="myProps" Grid.Column="1" />
+            <Button x:Name="appendBtn" Grid.Column="2" Content="Append item" Click="appendBtn_Click"/>
+
+            <!-- <Rectangle Grid.Column="2" Fill="DarkGray" /> -->
         </Grid>
 
         <!-- footer -->
